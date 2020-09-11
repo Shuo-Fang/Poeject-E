@@ -1,53 +1,30 @@
 -------------------------------------------
-Source installation information for modders
--------------------------------------------
-This code follows the Minecraft Forge installation methodology. It will apply
-some small patches to the vanilla MCP source code, giving you and it access 
-to some of the data and functions you need to build a successful mod.
-
-Note also that the patches are built against "unrenamed" MCP source code (aka
-srgnames) - this means that you will not be able to read them directly against
-normal code.
-
-Source pack installation information:
-
-Standalone source installation
+安装环境之前的准备
 ==============================
 
-See the Forge Documentation online for more detailed instructions:
+有关更详细的说明，请参阅在线Forge文档:
 http://mcforge.readthedocs.io/en/latest/gettingstarted/
 
-Step 1: Open your command-line and browse to the folder where you extracted the zip file.
+第一步: 打开命令行并浏览到您当前项目路径地址
 
-Step 2: You're left with a choice.
-If you prefer to use Eclipse:
-1. Run the following command: "gradlew genEclipseRuns" (./gradlew genEclipseRuns if you are on Mac/Linux)
-2. Open Eclipse, Import > Existing Gradle Project > Select Folder 
-   or run "gradlew eclipse" to generate the project.
-(Current Issue)
-4. Open Project > Run/Debug Settings > Edit runClient and runServer > Environment
-5. Edit MOD_CLASSES to show [modid]%%[Path]; 2 times rather then the generated 4.
+第二步: 你需要根据你的IDE做出选择.
 
-If you prefer to use IntelliJ:
-1. Open IDEA, and import project.
-2. Select your build.gradle file and have it import.
-3. Run the following command: "gradlew genIntellijRuns" (./gradlew genIntellijRuns if you are on Mac/Linux)
-4. Refresh the Gradle Project in IDEA if required.
+如果您喜欢使用Eclipse:
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can run "gradlew --refresh-dependencies" to refresh the local cache. "gradlew clean" to reset everything {this does not affect your code} and then start the processs again.
+1. 运行以下命令
+2. 运行命令"gradlew genEclipseRuns" (如果你使用的是Mac/Linux或者是Windows在上述命令不生效时输入以下命令: "./gradlew genEclipseRuns".)此步需要下载运行环境，可能需要一小时左右。
+3. 运行命令 "gradlew eclipse"(如果你使用的是Mac/Linux或者是Windows在上述命令不生效时输入以下命令:"./gradlew eclipse".)
+4. 打开Eclipse, Import > Existing Gradle Project > Select Folder 导入项目
+5. Open Project > Run/Debug Settings > Edit runClient and runServer > Environment (环境适配,可以在build path中设置,需要JDK1.8,UTF-8编码)
+6. 正式编辑项目
 
-Should it still not work, 
-Refer to #ForgeGradle on EsperNet for more information about the gradle environment.
-or the Forge Project Discord discord.gg/UvedJ9m
+如果您喜欢使用IntelliJ:
+1. 打开IDEA,导入项目.
+2. 选择你的build.gradle文件进行导入.
+3. 运行命令: "gradlew genIntellijRuns" (如果你使用的是Mac/Linux或者是Windows在上述命令不生效时输入以下命令"./gradlew genIntellijRuns")
+4. 在idea中刷新Gradle Project.
 
-Forge source installation
-=========================
-MinecraftForge ships with this code and installs it as part of the forge
-installation process, no further action is required on your part.
+如果在IDE中缺少库，或者遇到问题，可以运行"gradlew --refresh-dependencies" 来刷新本地缓存。"gradlew clean" 重置一切环境(这不会影响你的代码)，然后再次初始化环境。命令若报错可以尝试在前面加上"./"指定本地
 
-LexManos' Install Video
-=======================
-https://www.youtube.com/watch?v=8VEdtQLuLO0&feature=youtu.be
-
-For more details update more often refer to the Forge Forums:
-http://www.minecraftforge.net/forum/index.php/topic,14048.0.html
+如果还是不行，参考#ForgeGradle在EsperNet上获得更多关于gradle环境的信息。
+或者是本地环境与项目不和 discord.gg/UvedJ9m
